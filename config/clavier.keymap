@@ -32,7 +32,7 @@
 
         lower_layer {
             bindings = <
-                &trans  &trans  &kp LA(LEFT)  &kp LA(RIGHT)  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp MCLK  &mkp RCLK  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LSHFT  &mkp LCLK  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LCTRL  &mo 5  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &kp LA(LEFT)  &kp LA(RIGHT)  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LSHFT  &mkp MCLK  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LCTRL  &trans  &mo 5  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
@@ -85,6 +85,33 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+        combo_new_0 {
+            timeout-ms = <50>;
+            key-positions = <23 24>;
+            bindings = <&mkp LCLK>;
+        };
+        combo_new_1 {
+            timeout-ms = <50>;
+            key-positions = <14 24>;
+            bindings = <&mkp RCLK>;
+        };
+        combo_new_2 {
+            timeout-ms = <50>;
+            key-positions = <14 23 24>;
+            bindings = <&mkp MCLK>;
+        };
+    };
+    behaviors {
+        td_0: td_0 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_0";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp A>, <&kp B>;
+        };
+    };
     macros {
         employeeID: employeeID {
             compatible = "zmk,behavior-macro";
