@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-# trigger rebuild
+# clavier16: register workflow on GitHub Actions
   build:
     runs-on: ubuntu-latest
     container:
