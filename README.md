@@ -142,7 +142,7 @@ ZMKのスプリットキーボードでは、左手側が**Central（親機）**
 if SHIELD_CLAVIER_LEFT || SHIELD_CLAVIER_RIGHT
 
 config ZMK_KEYBOARD_NAME
-    default "Clavier"
+    default "clavier16"
 
 config ZMK_SPLIT
     default y
